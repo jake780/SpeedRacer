@@ -26,7 +26,6 @@ class Racer():
         #Slow me Down
         self.x_vel *= self.brakes
         self.y_vel *= self.brakes
-
         #Bounderies of the Vehicle
         #Left
         if self.x < (self.game.street.x + self.game.street.sidewalk_width):
@@ -42,16 +41,16 @@ class Racer():
             self.y = self.game.game_height - self.height
 
         #Movements
-        if keys[275]:
-            #Right
+        #Right
+        if keys[100]:
             self.x_vel += self.speed
-        if keys[276]:
-            #Left
+        #Left
+        if keys[97]:
             self.x_vel -= self.speed
-        if keys[274]:
-            #Down
+        #Down
+        if keys[115]:
             self.y_vel += self.speed
-        if keys[273]:
-            #Up
+        #Up
+        if keys[119]:
             self.y_vel -= self.speed
 

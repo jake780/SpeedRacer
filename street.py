@@ -1,6 +1,5 @@
 import pygame
 
-
 class Street():
     def __init__(self, game):
         self.game = game
