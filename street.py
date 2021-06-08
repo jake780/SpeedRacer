@@ -13,7 +13,7 @@ class Street():
         self.sidewalk_width = 35
 
         self.street_color = (0,0,0)
-        self.sidewalk_color = (155,155,155)
+        self.sidewalk_color = (203, 188, 188)
         self.line_color = (250, 250, 0)
 
     def sidewalks(self):

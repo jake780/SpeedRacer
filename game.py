@@ -8,7 +8,7 @@ class Game():
 
         # Create Racer
         self.game_width = 800
-        self.game_height = 800
+        self.game_height = 600
 
         self.racer = Racer(self)
         self.street = Street(self)

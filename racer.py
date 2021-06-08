@@ -11,12 +11,21 @@ class Racer():
         self.x_vel = 0
         self.y_vel = 0
         self.speed = 0.6
-        self.brakes = .9
+        self.brakes = .925
 
-        self.color = (255,255,255)
+        self.color = (249, 1, 91)
+        self.tire_color = (146, 148, 158)
 
     def draw(self):
         pygame.draw.rect(self.game.window, self.color, (self.x, self.y, self.width, self.height))
+
+        #Front Tires
+        pygame.draw.rect(self.game.window, self.tire_color, (self.x - 5, (self.y + self.height // 8), 8, 15))
+        pygame.draw.rect(self.game.window, self.tire_color, ((self.x + self.width - 3), (self.y + self.height // 8), 8, 15))
+        #Rear Tires
+        pygame.draw.rect(self.game.window, self.tire_color, (self.x - 5, (self.y + self.height - 18), 8, 15))
+        pygame.draw.rect(self.game.window, self.tire_color, ((self.x + self.width - 3), (self.y + self.height - 18), 8, 15))
+        
 
     def move(self, keys):
         #Velocity of the car, when moving
