@@ -1,6 +1,7 @@
 import pygame
 
 class Street():
+    """Game Surface"""
     def __init__(self, game):
         self.game = game
 

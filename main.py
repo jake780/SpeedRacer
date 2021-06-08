@@ -1,6 +1,5 @@
 import pygame
 
-
 from game import Game
 from racer import Racer
 
@@ -24,11 +23,10 @@ def main():
         game.move(keys)
 
         if keys[27]:
+            print("Gamed Closed via ESC")
             isRunning = False
             pygame.quit()
 
-
-    
 
 if __name__ == "__main__":
     main()

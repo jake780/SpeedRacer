@@ -1,6 +1,7 @@
 import pygame
 
 class Racer():
+    """Player Car"""
     def __init__(self, game):
         self.game = game
         self.x = self.game.game_width // 2
