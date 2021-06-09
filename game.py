@@ -3,8 +3,6 @@ import pygame
 from racer import Racer
 from street import Street
 
-background = pygame.image.load("assets/grass.png")
-
 class Game():
     def __init__(self):
         # Define Game size
@@ -16,8 +14,9 @@ class Game():
         self.street = Street(self)
 
         # Create pygame surface
+        self.background = pygame.image.load("assets/grass.png")
         self.window = pygame.display.set_mode((self.width,self.height))
-        self.window.blit(background, (0,0))
+        self.window.blit(self.background, (0,0))
 
         # Game Speed
         self.speed = 2
