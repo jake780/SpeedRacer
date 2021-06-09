@@ -4,8 +4,8 @@ class Racer():
     """Player Car"""
     def __init__(self, game):
         self.game = game
-        self.width = 30
-        self.height = 50
+        self.width = 100
+        self.height = 100
         self.x = (self.game.width // 2) - (self.width//2)
         self.y = self.game.height - (self.game.height // 8)
 
@@ -17,16 +17,12 @@ class Racer():
         self.color = (249, 1, 91)
         self.tire_color = (146, 148, 158)
 
-    def draw(self):
-        pygame.draw.rect(self.game.window, self.color, (self.x, self.y, self.width, self.height))
+        self.car_images = [""]
+        self.car = pygame.image.load("assets/cars/Car.png")
+        self.car = pygame.transform.scale(self.car, (self.width, self.height))
 
-        #Front Tires
-        pygame.draw.rect(self.game.window, self.tire_color, (self.x - 5, (self.y + self.height // 8), 8, 15))
-        pygame.draw.rect(self.game.window, self.tire_color, ((self.x + self.width - 3), (self.y + self.height // 8), 8, 15))
-        #Rear Tires
-        pygame.draw.rect(self.game.window, self.tire_color, (self.x - 5, (self.y + self.height - 18), 8, 15))
-        pygame.draw.rect(self.game.window, self.tire_color, ((self.x + self.width - 3), (self.y + self.height - 18), 8, 15))
-        
+    def draw(self):
+        self.game.window.blit(self.car, (self.x, self.y, self.width, self.height))
 
     def move(self, keys):
         #Velocity of the car, when moving
@@ -66,5 +62,6 @@ class Racer():
 
         # Obstacle Test
         if keys[32]:
-            self.game.street.add_car()
 
+            # self.game.street.add_car()
+            pass

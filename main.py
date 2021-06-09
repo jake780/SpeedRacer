@@ -3,11 +3,13 @@ import pygame
 from game import Game
 from racer import Racer
 
-
 framerate = 10
 game = Game()
 
-def main():
+def main(): 
+    # Before Game Starts
+    game.scoreboard.show_start_message()
+
     isRunning = True
     while isRunning:
 
