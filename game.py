@@ -2,6 +2,7 @@ import pygame
 
 from racer import Racer
 from street import Street
+from scoreboard import Scoreboard
 
 class Game():
     def __init__(self):
@@ -9,14 +10,15 @@ class Game():
         self.width = 800
         self.height = 600
 
-        # Create Game objects
-        self.racer = Racer(self)
-        self.street = Street(self)
-
         # Create pygame surface
         self.background = pygame.image.load("assets/grass.png")
         self.window = pygame.display.set_mode((self.width,self.height))
         self.window.blit(self.background, (0,0))
+
+        # Create Game objects
+        self.racer = Racer(self)
+        self.street = Street(self)
+        self.scoreboard = Scoreboard(self)
 
         # Game Speed
         self.speed = 2
@@ -32,4 +34,5 @@ class Game():
     def move(self, keys):
         """Move Game Objects"""
         self.racer.move(keys)
+        
     

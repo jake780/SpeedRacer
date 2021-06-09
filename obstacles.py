@@ -36,16 +36,20 @@ class Car(Obstacle):
     def __init__(self, game):
         super().__init__(game)
         self.color = (0,200,200)
-        self.width = 40
-        self.height = 60
+        self.width = 100
+        self.height = 100
+
+        self.images = ["Ambulance", "Audi", "Black_viper", "Car", "Mini_truck", "Mini_van", "Police", "taxi", "truck"]
+        self.car = self.pick_car()
+
+    def pick_car(self):
+        car = random.choice(self.images)
+        chosen_car = pygame.image.load(f"assets/cars/{car}.png")
+        chosen_car = pygame.transform.scale(chosen_car, (self.width, self.height))
+        return chosen_car
 
     def draw(self):
-        pygame.draw.rect(self.game.window, self.color, (self.x, self.y, self.width, self.height))
-
-class Bus(Obstacle):
-    """Traffic"""
-    def __init__(self):
-        pass
+        self.game.window.blit(self.car, (self.x, self.y, self.width, self.height))
 
 class Pedestrian(Obstacle):
     """Traffic"""
