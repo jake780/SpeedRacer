@@ -17,8 +17,6 @@ def main():
         pygame.event.pump()
         pygame.display.update()
 
-        game.window.fill((0,80,0))
-
         keys = pygame.key.get_pressed()
         game.move(keys)
 
