@@ -20,7 +20,10 @@ class Game():
         self.window.blit(background, (0,0))
 
         # Game Speed
-        self.game_speed = 1
+        self.speed = 2
+
+        # Player Score
+        self.score = 0
 
     def draw(self):
         """Draw Game objects"""

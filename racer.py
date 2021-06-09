@@ -4,14 +4,14 @@ class Racer():
     """Player Car"""
     def __init__(self, game):
         self.game = game
-        self.x = self.game.width // 2
-        self.y = self.game.width // 2
         self.width = 30
         self.height = 50
+        self.x = (self.game.width // 2) - (self.width//2)
+        self.y = self.game.height - (self.game.height // 8)
 
         self.x_vel = 0
         self.y_vel = 0
-        self.speed = 0.6
+        self.speed = 0.25
         self.brakes = .925
 
         self.color = (249, 1, 91)
@@ -63,4 +63,8 @@ class Racer():
         #Up
         if keys[119]:
             self.y_vel -= self.speed
+
+        # Obstacle Test
+        if keys[32]:
+            self.game.street.add_car()
 

@@ -3,8 +3,8 @@ import pygame
 from game import Game
 from racer import Racer
 
-framerate = 10
 
+framerate = 10
 game = Game()
 
 def main():
