@@ -4,8 +4,8 @@ class Racer():
     """Player Car"""
     def __init__(self, game):
         self.game = game
-        self.x = self.game.game_width // 2
-        self.y = self.game.game_width // 2
+        self.x = self.game.width // 2
+        self.y = self.game.width // 2
         self.width = 30
         self.height = 50
 
@@ -47,8 +47,8 @@ class Racer():
         if self.y < 0:
             self.y = 0
         #Bottom
-        if self.y > self.game.game_height - self.height:
-            self.y = self.game.game_height - self.height
+        if self.y > self.game.height - self.height:
+            self.y = self.game.height - self.height
 
         #Movements
         #Right

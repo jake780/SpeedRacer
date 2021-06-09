@@ -6,15 +6,15 @@ from street import Street
 class Game():
     def __init__(self):
         # Define Game size
-        self.game_width = 800
-        self.game_height = 600
+        self.width = 800
+        self.height = 600
 
         # Create Game objects
         self.racer = Racer(self)
         self.street = Street(self)
 
         # Create pygame surface
-        self.window = pygame.display.set_mode((self.game_width,self.game_height))
+        self.window = pygame.display.set_mode((self.width,self.height))
 
         # Game Speed
         self.game_speed = 1
