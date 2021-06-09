@@ -21,7 +21,9 @@ def main():
         # Start message
         if keys[32] and not isStarted:
             isStarted = True
+            game.draw_background()
         if isStarted:
+            game.add_traffic()
             game.move(keys)
             game.draw()
         else:

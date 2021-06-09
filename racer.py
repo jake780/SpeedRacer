@@ -64,8 +64,3 @@ class Racer():
         if keys[119]:
             self.y_vel -= self.speed
 
-        # Obstacle Test
-        if keys[32]:
-
-            # self.game.street.add_car()
-            pass

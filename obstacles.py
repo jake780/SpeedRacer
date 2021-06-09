@@ -6,13 +6,13 @@ class Obstacle():
     def __init__(self, game):
         self.game = game
         self.x = self.random_start()
-        self.y = 0
+        self.y = -200
         self.color = (255,0,0)
         self.width = 20
         self.height = 50
 
     def random_start(self):
-        return random.randint(self.game.street.x, self.game.street.x + self.game.street.width)
+        return random.randint(self.game.street.x, self.game.street.x + self.game.street.width - 100)
         
     def move(self):
         """Advance Obstacle down street"""

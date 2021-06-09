@@ -1,4 +1,5 @@
 import pygame
+import random
 
 from racer import Racer
 from street import Street
@@ -11,9 +12,7 @@ class Game():
         self.height = 600
 
         # Create pygame surface
-        self.background = pygame.image.load("assets/grass.png")
-        self.window = pygame.display.set_mode((self.width,self.height))
-        self.window.blit(self.background, (0,0))
+        self.draw_background()
 
         # Create Game objects
         self.racer = Racer(self)
@@ -25,6 +24,18 @@ class Game():
 
         # Player Score
         self.score = 0
+
+        self.difficulty = 50
+
+    def add_traffic(self):
+        num = random.randint(0,self.difficulty)
+        if num == self.difficulty % 2:
+            self.street.add_car()
+
+    def draw_background(self):
+        self.background = pygame.image.load("assets/grass.png")
+        self.window = pygame.display.set_mode((self.width,self.height))
+        self.window.blit(self.background, (0,0))
 
     def draw(self):
         """Draw Game objects"""
