@@ -1,5 +1,7 @@
 import pygame
 
+car_image = pygame.image.load("assets/cars/Car.png")
+
 class Racer():
     """Player Car"""
     def __init__(self, game):
@@ -17,8 +19,10 @@ class Racer():
         self.color = (249, 1, 91)
         self.tire_color = (146, 148, 158)
 
+        #This is for future car selection
         self.car_images = [""]
-        self.car = pygame.image.load("assets/cars/Car.png")
+
+        self.car = car_image
         self.car = pygame.transform.scale(self.car, (self.width, self.height))
 
     def draw(self):
