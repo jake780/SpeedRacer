@@ -23,7 +23,6 @@ class Scoreboard():
         self.logo_image = pygame.image.load('assets/logo.gif')
         self.logo_image = pygame.transform.scale(self.logo_image, (self.logo_width, self.logo_height))
         
-
     def show_start_message(self):
         """Eat ass smoke grass"""
         self.game.window.blit(self.start_message, ((self.game.width // 2) - (self.start_message_width // 2), self.game.height - self.start_message_height*2))
