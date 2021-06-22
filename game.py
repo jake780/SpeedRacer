@@ -6,6 +6,7 @@ from street import Street
 from scoreboard import Scoreboard
 
 class Game():
+    """Controls the game"""
     def __init__(self):
         # Define Game size
         self.width = 800

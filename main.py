@@ -1,3 +1,5 @@
+"""Speed Racer Version 1.0"""
+
 import pygame
 
 from game import Game
@@ -7,8 +9,14 @@ framerate = 10
 game = Game()
 
 def main():
+    """SpeedRacer Main Loop"""
+
+    # Loop Variable
     isRunning = True
+    # Game Started Variable
     isStarted = False
+
+    # Main Loop
     while isRunning:
         pygame.time.delay(framerate)
         pygame.event.pump()

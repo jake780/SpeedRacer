@@ -34,9 +34,11 @@ class Racer():
             return False
 
     def draw(self):
+        """Draw the Racer"""
         self.game.window.blit(self.car, (self.x, self.y, self.width, self.height))
 
     def move(self, keys):
+        """Move the Racer"""
         #Velocity of the car, when moving
         self.x += self.x_vel
         self.y += self.y_vel

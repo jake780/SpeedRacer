@@ -12,6 +12,7 @@ class Obstacle():
         self.height = 50
 
     def random_start(self):
+        """Give the Obstacle a random x Position within the bounds of the Street"""
         return random.randint(self.game.street.x, self.game.street.x + self.game.street.width - 100)
         
     def move(self):
@@ -43,12 +44,14 @@ class Car(Obstacle):
         self.car = self.pick_car()
 
     def pick_car(self):
+        """Choose a random car image to display"""
         car = random.choice(self.images)
         chosen_car = pygame.image.load(f"assets/cars/{car}.png")
         chosen_car = pygame.transform.scale(chosen_car, (self.width, self.height))
         return chosen_car
 
     def draw(self):
+        """Draw the Car"""
         self.game.window.blit(self.car, (self.x, self.y, self.width, self.height))
 
 class Pedestrian(Obstacle):
