@@ -6,7 +6,6 @@ from racer import Racer
 framerate = 10
 game = Game()
 
-
 def main():
     isRunning = True
     isStarted = False
@@ -15,21 +14,21 @@ def main():
         pygame.event.pump()
         pygame.display.update()
 
+        # Key Press Dictionary
         keys = pygame.key.get_pressed()
 
-        
-        # Start message
+        # Press Space to start the Game
         if keys[32] and not isStarted:
             isStarted = True
             game.draw_background()
+        # Game running
         if isStarted:
-            game.add_traffic()
-            game.move(keys)
-            game.draw()
+            game.run(keys)
+        # Game start Screen
         else:
-            game.scoreboard.show_logo()
-            game.scoreboard.show_start_message()
+            game.title_screen()
 
+        # Quit
         if keys[27]:
             print("Gamed Closed via ESC")
             isRunning = False

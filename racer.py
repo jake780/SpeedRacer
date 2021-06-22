@@ -1,7 +1,5 @@
 import pygame
 
-car_image = pygame.image.load("assets/cars/Car.png")
-
 class Racer():
     """Player Car"""
     def __init__(self, game):
@@ -19,11 +17,21 @@ class Racer():
         self.color = (249, 1, 91)
         self.tire_color = (146, 148, 158)
 
+        self.racer_image = pygame.image.load("assets/cars/Car.png")
+
         #This is for future car selection
         self.car_images = [""]
 
-        self.car = car_image
+        self.car = self.racer_image
         self.car = pygame.transform.scale(self.car, (self.width, self.height))
+
+    def collide(self, object):
+        """Returns True if the Racer collides with object"""
+        # If x Collide and y Collide
+        if ((self.x > object.x) and (self.x < (object.x + object.width))) and ((self.y > object.y) and (self.y < (object.y + object.height))):
+            return True
+        else:
+            return False
 
     def draw(self):
         self.game.window.blit(self.car, (self.x, self.y, self.width, self.height))
