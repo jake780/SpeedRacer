@@ -12,12 +12,12 @@ def main():
     """SpeedRacer Main Loop"""
 
     # Loop Variable
-    isRunning = True
+    game.isRunning = True
     # Game Started Variable
     isStarted = False
 
     # Main Loop
-    while isRunning:
+    while game.isRunning:
         pygame.time.delay(framerate)
         pygame.event.pump()
         pygame.display.update()
@@ -39,7 +39,7 @@ def main():
         # Quit
         if keys[27]:
             print("Gamed Closed via ESC")
-            isRunning = False
+            game.isRunning = False
             pygame.quit()
 
 

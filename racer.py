@@ -6,6 +6,10 @@ class Racer():
         self.game = game
         self.width = 100
         self.height = 100
+
+        self.hitbox_width = 35
+        self.hitbox_height = 100
+
         self.x = (self.game.width // 2) - (self.width//2)
         self.y = self.game.height - (self.game.height // 8)
 
@@ -28,7 +32,7 @@ class Racer():
     def collide(self, object):
         """Returns True if the Racer collides with object"""
         # If x Collide and y Collide
-        if ((self.x > object.x) and (self.x < (object.x + object.width))) and ((self.y > object.y) and (self.y < (object.y + object.height))):
+        if ((self.x + self.hitbox_width > object.x) and (self.x < (object.x + object.width//3))) and ((self.y + self.hitbox_height > object.y) and (self.y < (object.y + object.height))):
             return True
         else:
             return False
@@ -36,6 +40,10 @@ class Racer():
     def draw(self):
         """Draw the Racer"""
         self.game.window.blit(self.car, (self.x, self.y, self.width, self.height))
+
+        # Test draw hitbox
+        pygame.draw.rect(self.game.window, self.color, (self.x + self.width //3, self.y, self.hitbox_width, self.hitbox_height))
+        
 
     def move(self, keys):
         """Move the Racer"""

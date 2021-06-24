@@ -5,9 +5,15 @@ from racer import Racer
 from street import Street
 from scoreboard import Scoreboard
 
+# Delete later, for testing
+from time import sleep
+
 class Game():
     """Controls the game"""
     def __init__(self):
+        # Mainloop Variable
+        self.isRunning = False
+
         # Define Game size
         self.width = 800
         self.height = 600
@@ -26,7 +32,7 @@ class Game():
         # Player Score
         self.score = 0
 
-        self.difficulty = 50
+        self.difficulty = 100
 
     def add_traffic(self):
         """Adds car obstacles to the game"""
@@ -62,7 +68,13 @@ class Game():
 
     def end(self):
         """End the current Game"""
-        print("Game OVER")
+        print("Game OVER!!!")
+        print("Score: NA")
+
+        self.scoreboard.show_game_over_message()
+        sleep(5)
+        self.isRunning = False
+
         
     def run(self, keys):
         """Runs all needed game methods"""

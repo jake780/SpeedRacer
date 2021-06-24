@@ -40,6 +40,9 @@ class Car(Obstacle):
         self.width = 100
         self.height = 100
 
+        self.hitbox_width = self.width // 3
+        self.hitbox_height = self.height
+
         self.images = ["Ambulance", "Audi", "Black_viper", "Car", "Mini_truck", "Mini_van", "Police", "taxi", "truck"]
         self.car = self.pick_car()
 
@@ -53,6 +56,9 @@ class Car(Obstacle):
     def draw(self):
         """Draw the Car"""
         self.game.window.blit(self.car, (self.x, self.y, self.width, self.height))
+
+        # Test hitboxes
+        pygame.draw.rect(self.game.window, self.color, (self.x + self.width//3, self.y, self.hitbox_width, self.hitbox_height))
 
 class Pedestrian(Obstacle):
     """Traffic"""
